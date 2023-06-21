@@ -9,7 +9,7 @@ public class UsuarioModel {
 
     @Getter
     @Setter
-    String nombre;
+    String username;
 
     @Getter
     @Setter
