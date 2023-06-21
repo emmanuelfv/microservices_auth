@@ -1,20 +1,19 @@
 package com.amdocs.auth.service;
 
-import com.amdocs.auth.model.UsuarioModel;
-
-import com.amdocs.auth.repository.UsuarioRepository;
+import com.amdocs.auth.model.TokenModel;
+import com.amdocs.auth.repository.TokenRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UsuarioService {
+public class TokenService {
 
     @Autowired
-    UsuarioRepository repository;
+    TokenRepository repository;
 
-    public String login(UsuarioModel usuario) {
-        if(repository.findById(ususario.getId())) {
-            return "TOKEN";
+    public String login(TokenModel token) {
+        if(repository.findById(token.getId())) {
+            return "ACTIVE";
         } else {
             return "NOT_FOUND";
         }
