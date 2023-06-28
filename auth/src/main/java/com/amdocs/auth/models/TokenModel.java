@@ -25,7 +25,7 @@ public class TokenModel {
 
 	@Getter
 	@Setter
-	String token;
+	String tokenId;
 
 	@Getter
 	@Setter

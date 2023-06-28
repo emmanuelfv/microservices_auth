@@ -9,14 +9,19 @@ import org.springframework.stereotype.Service;
 public class TokenService {
 
     @Autowired
-    TokenRepository repository;
+    TokenRepository tokenRepository;
 
-    public String login(TokenModel token) {
-        if(repository.findById(token.getId()) != null) {
-            return "ACTIVE";
+    public String getStatus(String tokenStr) {
+        TokenModel tokenRec = tokenRepository.findTokenByTokenId(tokenStr);
+        if(tokenRec != null) {
+            if(true){ // to change this
+                return "ACTIVE";
+            }
+            else{
+                return "EXPIRED";
+            }
         } else {
             return "NOT_FOUND";
         }
     }
-
 }
