@@ -1,12 +1,10 @@
 package com.amdocs.auth.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Table;
+
 import lombok.Getter;
 import lombok.Setter;
-import jakarta.persistence.Id;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name="usuario")
@@ -19,7 +17,7 @@ public class UsuarioModel {
 
     @Getter
     @Setter
-    String username;
+    String userName;
 
     @Getter
     @Setter
