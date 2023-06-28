@@ -1,44 +1,39 @@
 package com.amdocs.auth.models;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.util.Date;
 
 @Entity
 @Table(name="token")
 public class TokenModel {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
+	@Getter
+	@Setter
 	Long id;
-	
+
+	@Getter
+	@Setter
 	Long userId;
-	
+
+	@Getter
+	@Setter
 	String token;
 
-	public Long getId() {
-		return id;
-	}
+	@Getter
+	@Setter
+	Date creationDate;
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+	@Getter
+	@Setter
+	Date lastUpdatedDate;
 
-	public Long getUserId() {
-		return userId;
-	}
-
-	public void setUserId(Long userId) {
-		this.userId = userId;
-	}
-
-	public String getToken() {
-		return token;
-	}
-
-	public void setToken(String token) {
-		this.token = token;
-	}
 
 }

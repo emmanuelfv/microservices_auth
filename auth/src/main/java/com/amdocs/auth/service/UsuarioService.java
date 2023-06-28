@@ -12,15 +12,17 @@ public class UsuarioService {
     UsuarioRepository usuarioRepository;
 
     public String login(UsuarioModel usuarioModel) {
-        if(usuarioRepository.findByUserName(usuarioModel.getUserName())) {
+        UsuarioModel user = usuarioRepository.findByUserName(usuarioModel.getUserName());
+        if(user != null && user.getPassword() == usuarioModel.getPassword()) {
             return "TOKEN";
         } else {
-            return "NOT_FOUND";
+            return "-1";
         }
     }
 
     public UsuarioModel registerUsuario(UsuarioModel usuarioModel) {
-        if(usuarioRepository.findByUserName(usuarioModel.getUserName())) {
+        UsuarioModel user = usuarioRepository.findByUserName(usuarioModel.getUserName());
+        if(user != null) {
             return usuarioModel;
         } else {
             usuarioRepository.save(usuarioModel);
